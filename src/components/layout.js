@@ -8,6 +8,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: overpass, Trebuchet MS, sans-serif;
     margin: 0;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 `
 

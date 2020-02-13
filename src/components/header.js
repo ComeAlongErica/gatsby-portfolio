@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { Link } from 'gatsby'
-
 const HeaderContainer = styled.header`
+  position: relative;
+  height: 50px;
+`
+const Menu = styled.header`
   position: absolute;
   width: 300px;
   margin: -100px 0 0 0;
@@ -75,7 +78,7 @@ const Header = props => {
   const { screen } = props
   const [menuIsOpen, setMenuIsOpened] = useState(screen === 'mobile')
   return (
-    <>
+    <HeaderContainer isOpen={menuIsOpen}>
       <StyledBurger
         isOpen={menuIsOpen}
         onClick={() => setMenuIsOpened(!menuIsOpen)}
@@ -84,12 +87,12 @@ const Header = props => {
         <div />
         <div />
       </StyledBurger>
-      <HeaderContainer isOpen={menuIsOpen}>
+      <Menu isOpen={menuIsOpen}>
         <Link to='/'> Home</Link>
         <Link to='/contact/'>Contact</Link>
         <Link to='/blog/'> Blog</Link>
-      </HeaderContainer>
-    </>
+      </Menu>
+    </HeaderContainer>
   )
 }
 export default Header

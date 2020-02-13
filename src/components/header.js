@@ -11,10 +11,10 @@ const HeaderContainer = styled.header`
   padding-top: 125px;
   right: -100px;
   background: white;
-  position: absolute; 
+  position: absolute;
   transform-origin: 0% 0%;
-  transform:${props => !props.isOpen && 'translate(100%, 0)'};
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  ${props => !props.isOpen && 'transform: translate(100%, 0);'}
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   a {
     display: block;
     text-decoration: none;
@@ -56,16 +56,18 @@ const StyledBurger = styled.button`
     transform-origin: 1px;
 
     :first-child {
-      transform: ${({ isOpen }) => (isOpen ? 'rotate(45deg)' : 'rotate(0)')};
+      ${props => props.isOpen && 'transform: rotate(45deg);'}
     }
 
     :nth-child(2) {
-      opacity: ${({ isOpen }) => (isOpen ? '0' : '1')};
-      transform: ${({ isOpen }) => (isOpen ? 'translateX(20px)' : 'translateX(0)')};
+      ${props => props.isOpen && 'transform: translateX(20px); opacity: 0;'}
     }
 
     :nth-child(3) {
-      transform: ${({ isOpen }) => (isOpen ? 'rotate(-45deg)' : 'rotate(0)')};
+      ${props => props.isOpen && 'transform: rotate(-45deg);'}
+    }
+    :hover {
+      background: ${props => props.theme.peach};
     }
   }
 `

@@ -1,13 +1,10 @@
 import React from 'react'
 
-import Header from '../components/header'
 import AboutMe from '../components/aboutme'
-import Footer from '../components/footer'
+import Layout from '../components/layout'
 
 export default () => (
-  <div style={{ color: `teal` }}>
-    <Header />
+  <Layout>
     <AboutMe />
-    <Footer />
-  </div>
+  </Layout>
 )

@@ -1,13 +1,19 @@
 import React from "react"
-import { Link } from 'gatsby'
+import styled from "styled-components"
+
+import { Link } from "gatsby"
+
+const HeaderContainer = styled.header`
+  font-family: overpass;
+`
 
 const Header = () => (
-  <div style={{ color: `teal` }}>
+  <HeaderContainer>
     <Link to='/contact/'>Contact</Link>
     <Link to='/blog/'> Blog</Link>
     <Link to='/'> Home</Link>
     <h1>About Gatsby</h1>
     <p>Such wow. Very React.</p>
-  </div>
+  </HeaderContainer>
 )
 export default Header

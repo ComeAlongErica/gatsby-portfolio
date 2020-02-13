@@ -1,10 +1,9 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
 
-import { Link } from "gatsby"
+import { Link } from 'gatsby'
 
 const HeaderContainer = styled.header`
-  font-family: overpass;
 `
 
 const Header = () => (

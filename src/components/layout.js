@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { theme } from '../assets/ThemeProvider'
 import Header from './header'
@@ -11,13 +11,41 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Layout = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <Header />
-    {children}
-    <Footer />
-  </ThemeProvider>
-)
+const Layout = ({ children }) => {
+  const [hasRan, setHasRan] = useState(false)
+  const [screenSize, setScreenSize] = useState()
+  const updateScreenSize = () => {
+    setScreenSize(determineScreen(window.innerWidth))
+  }
+  useEffect(() => {
+    if (!hasRan) {
+      setHasRan(true)
+      updateScreenSize()
+    }
+    window.addEventListener('resize', updateScreenSize)
+    return () => {
+      window.removeEventListener('resize', updateScreenSize)
+    }
+  }, [screenSize])
+
+  const determineScreen = width => {
+    let screenSize = 'mobile'
+    if (width > theme.desktop) {
+      screenSize = 'desktop'
+    } else if (width > theme.tablet) {
+      screenSize = 'tablet'
+    }
+    return screenSize
+  }
+
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Header screen={screenSize} />
+      {children}
+      <Footer />
+    </ThemeProvider>
+  )
+}
 
 export default Layout

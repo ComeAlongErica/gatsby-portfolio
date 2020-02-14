@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: overpass, Trebuchet MS, sans-serif;
     margin: 0;
     max-width: 100vw;
+    min-height: 100vh;
     overflow-x: hidden;
   }
 `

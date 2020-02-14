@@ -6,24 +6,5 @@ import Layout from '../components/layout'
 export default () => (
   <Layout>
     <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
-    <AboutMe />
   </Layout>
 )

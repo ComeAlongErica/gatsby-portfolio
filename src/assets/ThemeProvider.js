@@ -1,12 +1,12 @@
 export const theme = {
   font: 'overpass',
 
-  peach: '#f9a17',
+  peach: '#f9a171',
   darkGrey: '#333',
   lightGrey: '#404040',
-  blue: '#47889',
+  blue: '#478891',
   yellow: '#ffeebd',
 
   tablet: 767,
-  desktop: 1024
+  desktop: 1024,
 }

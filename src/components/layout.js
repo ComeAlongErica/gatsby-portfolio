@@ -17,10 +17,11 @@ const GlobalStyle = createGlobalStyle`
 const Layout = ({ children }) => {
   const [hasRan, setHasRan] = useState(false)
   const [screenSize, setScreenSize] = useState()
-  const updateScreenSize = () => {
-    setScreenSize(determineScreen(window.innerWidth))
-  }
+
   useEffect(() => {
+    const updateScreenSize = () => {
+      setScreenSize(determineScreen(window.innerWidth))
+    }
     if (!hasRan) {
       setHasRan(true)
       updateScreenSize()
@@ -29,7 +30,7 @@ const Layout = ({ children }) => {
     return () => {
       window.removeEventListener('resize', updateScreenSize)
     }
-  }, [screenSize])
+  }, [screenSize, hasRan])
 
   const determineScreen = width => {
     let screenSize = 'mobile'

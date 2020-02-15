@@ -4,7 +4,8 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 const HeaderContainer = styled.header`
   position: relative;
-  height: 50px;
+  height: 55px;
+  background-color: grey;
 `
 const Menu = styled.header`
   position: absolute;
@@ -69,7 +70,9 @@ const StyledBurger = styled.button`
     :nth-child(3) {
       ${props => props.isOpen && 'transform: rotate(-45deg);'}
     }
-    :hover {
+  }
+  :hover {
+    div {
       background: ${props => props.theme.peach};
     }
   }

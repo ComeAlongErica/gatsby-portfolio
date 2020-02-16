@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header screen={screenSize} />
-      {children}
+        {children(screenSize)}
       <Footer />
     </ThemeProvider>
   )

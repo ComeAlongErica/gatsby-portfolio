@@ -21,13 +21,16 @@ const Decor = styled.div`
   top: 100px;
 `
 
-const AboutMe = () => (
+const AboutMe = props => {
+  const {layout} = props
+
+  return (
   <Container>
     <h1>About Me</h1>
     <Decor>
-      <Self />
+      {!(layout === 'mobile') && <Self />}
       <Blobs smoothBlob color={'darkYellow'} style={`margin-top: 20px;`}/>
     </Decor>
   </Container>
-)
+)}
 export default AboutMe

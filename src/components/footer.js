@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Github from './parts/icons/github'
-import LinkedIn from './parts/icons/LinkedIn'
-import Instagram from './parts/icons/Instagram'
+import Github from '../assets/icons/github'
+import LinkedIn from '../assets/icons/LinkedIn'
+import Instagram from '../assets/icons/Instagram'
 
 const FooterContainer = styled.footer`
   display: flex;

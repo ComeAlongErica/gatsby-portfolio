@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-
 import { Link } from 'gatsby'
+
 const HeaderContainer = styled.header`
   position: relative;
   height: 55px;
@@ -9,13 +9,11 @@ const HeaderContainer = styled.header`
 `
 const Menu = styled.header`
   position: absolute;
-  width: 300px;
-  margin: -100px 0 0 0;
+  width: 200px;
   padding: 50px;
-  padding-top: 125px;
-  right: -100px;
   background: white;
   position: absolute;
+  right: 0;
   transform-origin: 0% 0%;
   ${props => !props.isOpen && 'transform: translate(100%, 0);'}
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -46,10 +44,6 @@ const StyledBurger = styled.button`
   padding: 0;
   z-index: 10;
 
-  &:focus {
-    outline: none;
-  }
-
   div {
     width: 2rem;
     height: 0.25rem;
@@ -64,7 +58,7 @@ const StyledBurger = styled.button`
     }
 
     :nth-child(2) {
-      ${props => props.isOpen && 'transform: translateX(20px); opacity: 0;'}
+      ${props => props.isOpen && 'opacity: 0;'}
     }
 
     :nth-child(3) {

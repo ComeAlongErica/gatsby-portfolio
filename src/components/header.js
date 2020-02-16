@@ -3,9 +3,12 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 const HeaderContainer = styled.header`
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
   height: 55px;
-  background-color: grey;
+  background-color: white;
 `
 const Menu = styled.header`
   position: absolute;
@@ -17,6 +20,7 @@ const Menu = styled.header`
   transform-origin: 0% 0%;
   ${props => !props.isOpen && 'transform: translate(100%, 0);'}
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08), 0 6px 6px rgba(0,0,0,0.12);
   a {
     display: block;
     text-decoration: none;

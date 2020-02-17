@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Blobs from '../../assets/blobs'
+
 const Container = styled.section`
   margin: 250px 0;
   width: 100vw;
@@ -46,7 +48,7 @@ const Container = styled.section`
   }
   h3 {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     padding: 10px 20px;
     margin: 0 auto;
     font-weight: 800;
@@ -55,10 +57,10 @@ const Container = styled.section`
   }
   p {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     padding: 10px 20px;
     margin: 0 auto;
-    line-height: 25px;
+    line-height: 38px;
     max-width: 550px;
     color: ${props => props.theme.darkGrey};
     span {
@@ -73,7 +75,7 @@ const Container = styled.section`
 
 const Development = props => {
   const languages = ['Javascript', 'Python', 'HTML5', 'CSS3']
-  const frameworks = ['React', 'Gatsby', 'Jest', 'Express', 'GraphQL']
+  const frameworks = ['React', 'Gatsby', 'Jest', 'Express', 'GraphQL', 'AngularJS']
   const tools = ['Git', 'Github', 'Jira', 'PostgreSQL', 'AWS', 'VS Code']
   return (
     <Container>
@@ -84,7 +86,7 @@ const Development = props => {
           <span>{language} </span>
         ))}
       </p>
-      <h3>Libraries & Framworks</h3>
+      <h3>Libraries & Frameworks</h3>
       <p>
         {frameworks.map(framework => (
           <span>{framework} </span>
@@ -96,6 +98,7 @@ const Development = props => {
           <span>{tool} </span>
         ))}
       </p>
+      <Blobs fourLumps color={'yellow'} style={`position: absolute; z-index: 1; right: 10px; bottom: -100px; width: 50%; max-width: 350px;`} />
     </Container>
   )
 }

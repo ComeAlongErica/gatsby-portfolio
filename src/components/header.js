@@ -90,9 +90,9 @@ const Header = props => {
         <div />
       </StyledBurger>
       <Menu isOpen={menuIsOpen}>
-        <Link to='/'> Home</Link>
-        <Link to='/contact/'>Contact</Link>
-        <Link to='/blog/'> Blog</Link>
+        <Link to='#about'>About</Link>
+        <Link to='#projects'> Projects</Link>
+        <Link to='#contact'> Contact</Link>
       </Menu>
     </HeaderContainer>
   )

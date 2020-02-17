@@ -75,7 +75,6 @@ const Decor = styled.div`
 `
 
 const AboutMe = props => {
-  const { layout } = props
   const title = "Hello, I'm Erica."
   return (
     <Container>

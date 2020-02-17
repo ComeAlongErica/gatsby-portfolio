@@ -2,17 +2,15 @@ import React from 'react'
 
 import AboutMe from '../components/indexComps/aboutme'
 import ShortIntro from '../components/indexComps/shortIntro'
+import Development from '../components/indexComps/development'
 import Layout from '../components/layout'
 
 export default props => {
   return (
     <Layout>
-      {layoutProps => (
-        <>
-          <AboutMe layout={layoutProps} />
-          <ShortIntro />
-        </>
-      )}
+      <AboutMe />
+      <ShortIntro />
+      <Development />
     </Layout>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Icon = styled.svg`
-  padding: 20px;
+  margin: 20px;
   cursor: pointer;
   stroke-width: 2;
   stroke: ${props => props.theme.lightGrey};

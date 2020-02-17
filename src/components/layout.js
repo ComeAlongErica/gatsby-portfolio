@@ -12,6 +12,10 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     overflow-x: hidden;
   }
+  * {
+    box-sizing: border-box;
+    }
+
 `
 
 const Layout = ({ children }) => {
@@ -46,7 +50,7 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header screen={screenSize} />
-        {children(screenSize)}
+      {children(screenSize)}
       <Footer />
     </ThemeProvider>
   )

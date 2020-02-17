@@ -1,18 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Blobs from '../assets/blobs'
-import Self from '../assets/selfportrait'
+import Blobs from '../../assets/blobs'
+import Self from '../../assets/selfportrait'
 
 const Container = styled.section`
   width: 100vw;
   min-height: 650px;
   background-color: ${props => props.theme.yellow};
-  box-sizing: border-box;
   padding: 50px;
   position: relative;
   @media screen and (min-width: ${props => props.theme.tablet}px) {
     min-height: 500px;
+  }
+  ::after {
+    transform: skewY(2deg);
+    transform-origin: 100% 0;
+    position: absolute;
+    background: inherit;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    bottom: -80px;
+    height: 80px;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
   }
 `
 
@@ -38,7 +51,8 @@ const TextContainer = styled.div`
     max-width: 350px;
     font-size: 22px;
     font-weight: 300;
-    margin: 10px 0;
+    margin: 0;
+    line-height: 25px;
     color: ${props => props.theme.lightGrey};
   }
   @media screen and (min-width: ${props => props.theme.tablet}px) {
@@ -52,6 +66,7 @@ const Decor = styled.div`
   position: absolute;
   right: 0;
   bottom: -20px;
+  z-index: 1;
   @media screen and (min-width: ${props => props.theme.tablet}px) {
     bottom: unset;
     top: 100px;

@@ -5,6 +5,7 @@ const Icon = styled.svg`
   position: absolute;
   z-index: 1;
   max-width: 450px;
+  fill: ${props => props.theme.darkGrey};
 `
 
 const Self = props => {

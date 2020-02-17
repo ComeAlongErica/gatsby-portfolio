@@ -6,31 +6,78 @@ import Self from '../assets/selfportrait'
 
 const Container = styled.section`
   width: 100vw;
-  min-height: 500px;
+  min-height: 650px;
   background-color: ${props => props.theme.yellow};
   box-sizing: border-box;
   padding: 50px;
   position: relative;
+  @media screen and (min-width: ${props => props.theme.tablet}px) {
+    min-height: 500px;
+  }
+`
+
+const TextContainer = styled.div`
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+  h1 {
+    font-size: 50px;
+    margin: 40px 0 0;
+    color: ${props => props.theme.darkGrey};
+    span {
+      cursor: default;
+      transition: 0.3s ease-in-out;
+    }
+    span:hover {
+      color: ${props => props.theme.peach};
+    }
+  }
+  h2 {
+    max-width: 350px;
+    font-size: 22px;
+    font-weight: 300;
+    margin: 10px 0;
+    color: ${props => props.theme.lightGrey};
+  }
+  @media screen and (min-width: ${props => props.theme.tablet}px) {
+    margin: 150px auto;
+  }
 `
 
 const Decor = styled.div`
-  width: 50%;
+  width: 90%;
+  max-width: 530px;
   max-height: 100%;
   position: absolute;
   right: 0;
-  top: 100px;
+  bottom: -20px;
+  @media screen and (min-width: ${props => props.theme.tablet}px) {
+    bottom: unset;
+    top: 100px;
+    width: 50%;
+  }
 `
 
 const AboutMe = props => {
-  const {layout} = props
-
+  const { layout } = props
+  const title = "Hello, I'm Erica."
   return (
-  <Container>
-    <h1>About Me</h1>
-    <Decor>
-      {!(layout === 'mobile') && <Self />}
-      <Blobs smoothBlob color={'darkYellow'} style={`margin-top: 20px;`}/>
-    </Decor>
-  </Container>
-)}
+    <Container>
+      <TextContainer>
+        <h1>
+          {[...title].map(letter => (
+            <span>{letter}</span>
+          ))}
+        </h1>
+        <h2>I'm a curious and experimental software developer.</h2>
+      </TextContainer>
+      <Decor>
+        <Self />
+        <Blobs smoothBlob color={'darkYellow'} style={`margin-top: 20px;`} />
+      </Decor>
+    </Container>
+  )
+}
 export default AboutMe

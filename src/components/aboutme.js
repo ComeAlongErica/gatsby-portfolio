@@ -48,7 +48,6 @@ const TextContainer = styled.div`
 
 const Decor = styled.div`
   width: 90%;
-  max-width: 530px;
   max-height: 100%;
   position: absolute;
   right: 0;

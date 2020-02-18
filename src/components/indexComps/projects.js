@@ -81,8 +81,6 @@ const ProjectContainer = styled.div`
   p {
     position: relative;
     z-index: 1;
-    padding: 10px 20px;
-    margin: 0 auto;
     line-height: 25px;
     max-width: 550px;
     font-size: 18px;
@@ -122,6 +120,19 @@ const ProjectContainer = styled.div`
       }
     }
   }
+  @media screen and (min-width: ${props => props.theme.tablet}px) {
+    flex-direction: row;
+  }
+`
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: ${props => props.theme.tablet}px) {
+    align-items: flex-start;
+    margin-left: 20px;
+  }
 `
 const Projects = props => {
   return (
@@ -136,26 +147,28 @@ const Projects = props => {
           >
             <img src={project.img} alt={project.alt}></img>
           </a>
-          <h3>{project.name}</h3>
-          <p>{project.description}</p>
-          <a
-            href={project.github}
-            aria-label={'view source code'}
-            className={'link'}
-          >
-            <svg
-              stroke='currentColor'
-              fill='none'
-              stroke-width='2'
-              viewBox='0 0 24 24'
-              stoke-linecap='round'
-              stoke-linejoin='round'
+          <TextContainer>
+            <h3>{project.name}</h3>
+            <p>{project.description}</p>
+            <a
+              href={project.github}
+              aria-label={'view source code'}
+              className={'link'}
             >
-              <path d='M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3'></path>
-              <line x1='8' y1='12' x2='16' y2='12'></line>
-            </svg>
-            View Source Code
-          </a>
+              <svg
+                stroke='currentColor'
+                fill='none'
+                stroke-width='2'
+                viewBox='0 0 24 24'
+                stoke-linecap='round'
+                stoke-linejoin='round'
+              >
+                <path d='M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3'></path>
+                <line x1='8' y1='12' x2='16' y2='12'></line>
+              </svg>
+              View Source Code
+            </a>
+          </TextContainer>
         </ProjectContainer>
       ))}
       <Squiggles

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Blobs from '../../assets/blobs'
 
 const Container = styled.section`
-  margin: 250px 0;
+  margin: 250px 0 0;
   width: 100vw;
   min-height: 350px;
   background-color: ${props => props.theme.peach};
@@ -98,7 +98,7 @@ const Development = props => {
           <span>{tool} </span>
         ))}
       </p>
-      <Blobs fourLumps color={'yellow'} style={`position: absolute; z-index: 1; right: 10px; bottom: -100px; width: 50%; max-width: 350px;`} />
+      <Blobs fourLumps color={'darkYellow'} style={`position: absolute; z-index: 1; right: 10px; bottom: -100px; width: 45%; max-width: 300px;`} />
     </Container>
   )
 }

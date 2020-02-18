@@ -9,7 +9,6 @@ const Container = styled.section`
   max-width: 1000px;
   margin: 0 auto 100px;
   padding-top: 100px;
-  /* margin-top: -50px; */
   h2 {
     text-align: center;
     font-size: 40px;
@@ -35,7 +34,7 @@ const ShortIntro = props => {
       <p>I'm a photographer/graphic designer turned developer. I aim to create elegant and scalable systems that serve users effectively. I enjoy working on both front and back-end portions of an app, but most of my efforts have been focused on the front-end. Truly, I just enjoy a interesting problem to solve.</p>
       <p>In addition to development work, I also do photography and graphic design. I enjoy getting my hands into everything. If I'm creating something new, I am happy!</p>
       <p>When I log off for the day, you can find me riding my bike, cooking up new recipes, or renovating another part of my house.</p>
-      <GroupX color={'blue'} height={250} styles={`position: absolute; bottom: -140px; left: 10%; transform: rotate(10deg); opacity: .90;`}/>
+      <GroupX color={'blue'} height={250} styles={`position: absolute; bottom: -140px; left: -150px; transform: rotate(10deg); opacity: .90;`}/>
     </Container>
   )
 }

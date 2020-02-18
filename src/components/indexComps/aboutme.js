@@ -80,8 +80,8 @@ const AboutMe = props => {
     <Container>
       <TextContainer>
         <h1>
-          {[...title].map(letter => (
-            <span>{letter}</span>
+          {[...title].map((letter, idx) => (
+            <span key={idx}>{letter}</span>
           ))}
         </h1>
         <h2>I'm a curious and experimental software developer.</h2>

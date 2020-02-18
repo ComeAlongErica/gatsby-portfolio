@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
 
 const HeaderContainer = styled.header`
   position: fixed;
@@ -21,7 +20,7 @@ const Menu = styled.header`
   transform-origin: 0% 0%;
   ${props => !props.isOpen && 'transform: translate(100%, 0);'}
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08), 0 6px 6px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.12);
   a {
     display: block;
     text-decoration: none;
@@ -90,9 +89,9 @@ const Header = props => {
         <div />
       </StyledBurger>
       <Menu isOpen={menuIsOpen}>
-        <Link to='#about'>About</Link>
-        <Link to='#projects'> Projects</Link>
-        <Link to='#contact'> Contact</Link>
+        <a href={'#about'}>About</a>
+        <a href={'#projects'}> Projects</a>
+        <a href={'#contact'}> Contact</a>
       </Menu>
     </HeaderContainer>
   )

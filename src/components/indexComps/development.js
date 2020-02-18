@@ -54,6 +54,7 @@ const Container = styled.section`
     font-weight: 800;
     line-height: 25px;
     max-width: 550px;
+    color: ${props => props.theme.lightGrey};
   }
   p {
     position: relative;
@@ -75,27 +76,27 @@ const Container = styled.section`
 
 const Development = props => {
   const languages = ['Javascript', 'Python', 'HTML5', 'CSS3']
-  const frameworks = ['React', 'Gatsby', 'Jest', 'Express', 'GraphQL', 'AngularJS']
+  const frameworks = ['React', 'MobX', 'Gatsby', 'Jest', 'Express', 'GraphQL', 'AngularJS']
   const tools = ['Git', 'Github', 'Jira', 'PostgreSQL', 'AWS', 'VS Code']
   return (
     <Container>
       <h2>My Development Backpack</h2>
       <h3>Languages</h3>
       <p>
-        {languages.map(language => (
-          <span>{language} </span>
+        {languages.map((language, idx) => (
+          <span key={idx}>{language} </span>
         ))}
       </p>
       <h3>Libraries & Frameworks</h3>
       <p>
-        {frameworks.map(framework => (
-          <span>{framework} </span>
+        {frameworks.map((framework, idx) => (
+          <span key={idx}>{framework} </span>
         ))}
       </p>
       <h3>Tools & Other</h3>
       <p>
-        {tools.map(tool => (
-          <span>{tool} </span>
+        {tools.map((tool,idx) => (
+          <span key={idx}>{tool} </span>
         ))}
       </p>
       <Blobs fourLumps color={'darkYellow'} style={`position: absolute; z-index: 1; right: 10px; bottom: -100px; width: 45%; max-width: 300px;`} />

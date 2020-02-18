@@ -8,7 +8,7 @@ const Icon = styled.svg`
 `
 
 const Blobs = props => {
-  const { smoothBlob, twoLumps, fourLumps, color, style } = props
+  const { smoothBlob, fourLumps, color, style } = props
   return (
     <>
       {smoothBlob && <Icon

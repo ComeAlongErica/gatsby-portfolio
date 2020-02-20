@@ -76,8 +76,24 @@ const Container = styled.section`
 
 const Development = props => {
   const languages = ['Javascript', 'Python', 'HTML5', 'CSS3']
-  const frameworks = ['React', 'MobX', 'Gatsby', 'Jest', 'Express', 'GraphQL', 'AngularJS']
-  const tools = ['Git', 'Github', 'Jira', 'PostgreSQL', 'AWS', 'VS Code']
+  const frameworks = [
+    'React',
+    'MobX',
+    'Gatsby',
+    'Jest',
+    'Express',
+    'GraphQL',
+    'AngularJS',
+  ]
+  const tools = [
+    'Git',
+    'Github',
+    'Jira',
+    'PostgreSQL',
+    'AWS',
+    'VS Code',
+    'Postman',
+  ]
   return (
     <Container>
       <h2>My Development Backpack</h2>
@@ -95,11 +111,15 @@ const Development = props => {
       </p>
       <h3>Tools & Other</h3>
       <p>
-        {tools.map((tool,idx) => (
+        {tools.map((tool, idx) => (
           <span key={idx}>{tool} </span>
         ))}
       </p>
-      <Blobs fourLumps color={'darkYellow'} style={`position: absolute; z-index: 1; right: 10px; bottom: -100px; width: 45%; max-width: 300px;`} />
+      <Blobs
+        fourLumps
+        color={'darkYellow'}
+        style={`position: absolute; z-index: 1; right: 10px; bottom: -100px; width: 45%; max-width: 300px;`}
+      />
     </Container>
   )
 }

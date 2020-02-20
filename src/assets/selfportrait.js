@@ -8,7 +8,7 @@ const Icon = styled.svg`
   fill: ${props => props.theme.darkGrey};
 `
 
-const Self = props => {
+const Self = () => {
   return (
     <Icon
       version='1.1'

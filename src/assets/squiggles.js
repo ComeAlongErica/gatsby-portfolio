@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Icon = styled.svg`
   fill: ${props => props.theme[props.color]};
@@ -60,5 +61,10 @@ const Squiggles = props => {
       <path d='M532.8,1.5c0.1,1,0.2,2,0.2,3' />
     </Icon>
   )
+}
+Squiggles.propTypes = {
+  height: PropTypes.number,
+  color: PropTypes.string,
+  style: PropTypes.string,
 }
 export default Squiggles

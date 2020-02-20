@@ -158,7 +158,7 @@ const Projects = props => {
               <svg
                 stroke='currentColor'
                 fill='none'
-                stroke-width='2'
+                strokeWidth='2'
                 viewBox='0 0 24 24'
                 stoke-linecap='round'
                 stoke-linejoin='round'

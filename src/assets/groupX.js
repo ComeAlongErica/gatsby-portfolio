@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Icon = styled.svg`
   fill: ${props => props.theme[props.color]};
@@ -157,5 +158,10 @@ const GroupX = props => {
       <path d='M124,226.2c0.4,0.2,0.8,0.4,1.2,0.6' />
     </Icon>
   )
+}
+GroupX.propTypes = {
+  height: PropTypes.number,
+  color: PropTypes.string,
+  style: PropTypes.string,
 }
 export default GroupX

@@ -27,7 +27,7 @@ const Menu = styled.div`
   ${props =>
     !props.isMobile &&
     'transform: translate(0, 0); background: none; height: 60px; padding: 15px; box-shadow: none; a { padding: 15px;}'}
-  a {
+    a {
     display: ${props => (props.isMobile ? 'block' : 'inline')};
     text-decoration: none;
     color: ${props => props.theme.darkGrey};
@@ -88,10 +88,15 @@ const Logo = styled.img`
 const Header = props => {
   const { screen } = props
   const [menuIsOpen, setMenuIsOpened] = useState(false)
-  const isMobile = screen === 'mobile'
+  const isMobile = !(screen === 'tablet' || screen === 'desktop')
+  console.log(isMobile)
   return (
     <HeaderContainer isOpen={menuIsOpen}>
-      <a href='/#' aria-label='scroll to top'>
+      <a
+        href='/#'
+        aria-label='scroll to top'
+        onClick={() => setMenuIsOpened(false)}
+      >
         <Logo
           src='https://comealongerica.com/images/come-along-logo.svg'
           alt='come along logo'

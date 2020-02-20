@@ -26,7 +26,7 @@ const Menu = styled.div`
   ${props => !props.isOpen && 'transform: translate(100%, 0);'}
   ${props =>
     !props.isMobile &&
-    'transform: translate(0, 0); background: none; height: 60px; padding: 16px; box-shadow: none; a { padding: 15px;}'}
+    'transform: translate(0, 0); background: none; height: 60px; padding: 15px; box-shadow: none; a { padding: 15px;}'}
   a {
     display: ${props => (props.isMobile ? 'block' : 'inline')};
     text-decoration: none;
@@ -91,10 +91,12 @@ const Header = props => {
   const isMobile = screen === 'mobile'
   return (
     <HeaderContainer isOpen={menuIsOpen}>
-      <Logo
-        src='https://comealongerica.com/images/come-along-logo.svg'
-        alt='come along logo'
-      />
+      <a href='/#' aria-label='scroll to top'>
+        <Logo
+          src='https://comealongerica.com/images/come-along-logo.svg'
+          alt='come along logo'
+        />
+      </a>
       {isMobile && (
         <StyledBurger
           isOpen={menuIsOpen}

@@ -91,30 +91,36 @@ const Development = props => {
     'Jira',
     'PostgreSQL',
     'AWS',
-    'VS Code',
+    'VSCode',
     'Postman',
   ]
   return (
     <Container>
       <h2>My Development Backpack</h2>
-      <h3>Languages</h3>
-      <p>
-        {languages.map((language, idx) => (
-          <span key={idx}>{language} </span>
-        ))}
-      </p>
-      <h3>Libraries & Frameworks</h3>
-      <p>
-        {frameworks.map((framework, idx) => (
-          <span key={idx}>{framework} </span>
-        ))}
-      </p>
-      <h3>Tools & Other</h3>
-      <p>
-        {tools.map((tool, idx) => (
-          <span key={idx}>{tool} </span>
-        ))}
-      </p>
+      <div data-sal='slide-up' data-sal-delay='100' data-sal-easing='ease-in'>
+        <h3>Languages</h3>
+        <p>
+          {languages.map((language, idx) => (
+            <span key={idx}>{language} </span>
+          ))}
+        </p>
+      </div>
+      <div data-sal='slide-up' data-sal-delay='100' data-sal-easing='ease-in'>
+        <h3>Libraries & Frameworks</h3>
+        <p>
+          {frameworks.map((framework, idx) => (
+            <span key={idx}>{framework} </span>
+          ))}
+        </p>
+      </div>
+      <div data-sal='slide-up' data-sal-delay='100' data-sal-easing='ease-in'>
+        <h3>Tools & Other</h3>
+        <p>
+          {tools.map((tool, idx) => (
+            <span key={idx}>{tool} </span>
+          ))}
+        </p>
+      </div>
       <Blobs
         fourLumps
         color={'darkYellow'}

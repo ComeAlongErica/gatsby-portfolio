@@ -139,7 +139,12 @@ const Projects = props => {
     <Container id={'projects'}>
       <h2>Projects</h2>
       {projects.map((project, idx) => (
-        <ProjectContainer key={idx}>
+        <ProjectContainer
+          key={idx}
+          data-sal='slide-up'
+          data-sal-delay='100'
+          data-sal-easing='ease-in'
+        >
           <a
             href={project.url}
             aria-label={'view project'}

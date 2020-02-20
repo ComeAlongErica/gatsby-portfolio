@@ -31,10 +31,29 @@ const ShortIntro = props => {
   return (
     <Container id={'about'}>
       <h2>Short Introduction</h2>
-      <p>I'm a photographer/graphic designer turned developer. I aim to create elegant and scalable systems that serve users effectively. I enjoy working on both front and back-end portions of an app, but most of my efforts have been focused on the front-end. Truly, I just enjoy a interesting problem to solve.</p>
-      <p>In addition to development work, I also do photography and graphic design. I enjoy getting my hands into everything. If I'm creating something new, I am happy!</p>
-      <p>When I log off for the day, you can find me riding my bike, cooking up new recipes, or renovating another part of my house.</p>
-      <GroupX color={'blue'} height={250} styles={`position: absolute; bottom: -140px; left: -150px; transform: rotate(10deg); opacity: .90;`}/>
+      <div>
+        <p data-sal='slide-up' data-sal-delay='100' data-sal-easing='ease-in'>
+          I'm a photographer/graphic designer turned developer. I aim to create
+          elegant and scalable systems that serve users effectively. I enjoy
+          working on both front and back-end portions of an app, but most of my
+          efforts have been focused on the front-end. Truly, I just enjoy a
+          interesting problem to solve.
+        </p>
+        <p data-sal='slide-up' data-sal-delay='100' data-sal-easing='ease-in'>
+          In addition to development work, I also do photography and graphic
+          design. I enjoy getting my hands into everything. If I'm creating
+          something new, I am happy!
+        </p>
+        <p data-sal='slide-up' data-sal-delay='100' data-sal-easing='ease-in'>
+          When I log off for the day, you can find me riding my bike, cooking up
+          new recipes, or renovating another part of my house.
+        </p>
+      </div>
+      <GroupX
+        color={'blue'}
+        height={250}
+        styles={`position: absolute; bottom: -140px; left: -150px; transform: rotate(10deg); opacity: .90;`}
+      />
     </Container>
   )
 }

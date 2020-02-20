@@ -7,8 +7,10 @@ const HeaderContainer = styled.header`
   top: 0;
   right: 0;
   width: 100vw;
-  height: 55px;
+  height: 60px;
   background-color: white;
+  box-shadow: 0 10px 20px rgba(201, 202, 202, 0.23),
+    0 6px 6px rgba(213, 219, 225, 0.12);
 `
 const Menu = styled.div`
   position: absolute;
@@ -17,13 +19,14 @@ const Menu = styled.div`
   background: white;
   position: absolute;
   right: 0;
+  top: 0;
   transform-origin: 0% 0%;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.12);
   ${props => !props.isOpen && 'transform: translate(100%, 0);'}
   ${props =>
     !props.isMobile &&
-    'transform: translate(0, 0); background: none; height: 55px; padding: 12px; box-shadow: none; a { padding: 15px;}'}
+    'transform: translate(0, 0); background: none; height: 60px; padding: 16px; box-shadow: none; a { padding: 15px;}'}
   a {
     display: ${props => (props.isMobile ? 'block' : 'inline')};
     text-decoration: none;
@@ -38,7 +41,7 @@ const Menu = styled.div`
 `
 const StyledBurger = styled.button`
   position: absolute;
-  top: 10px;
+  top: 13px;
   right: 10px;
   display: flex;
   flex-direction: column;
@@ -78,12 +81,20 @@ const StyledBurger = styled.button`
     }
   }
 `
+const Logo = styled.img`
+  height: 46px;
+  margin: 6px 10px;
+`
 const Header = props => {
   const { screen } = props
   const [menuIsOpen, setMenuIsOpened] = useState(false)
   const isMobile = screen === 'mobile'
   return (
     <HeaderContainer isOpen={menuIsOpen}>
+      <Logo
+        src='https://comealongerica.com/images/come-along-logo.svg'
+        alt='come along logo'
+      />
       {isMobile && (
         <StyledBurger
           isOpen={menuIsOpen}

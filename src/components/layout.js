@@ -22,22 +22,18 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Layout = ({ children }) => {
-  const [hasRan, setHasRan] = useState(false)
   const [screenSize, setScreenSize] = useState()
 
   useEffect(() => {
     const updateScreenSize = () => {
       setScreenSize(determineScreen(window.innerWidth))
     }
-    if (!hasRan) {
-      setHasRan(true)
-      updateScreenSize()
-    }
+    updateScreenSize()
     window.addEventListener('resize', updateScreenSize)
     return () => {
       window.removeEventListener('resize', updateScreenSize)
     }
-  }, [screenSize, hasRan])
+  }, [])
 
   const determineScreen = width => {
     let screenSize = 'mobile'
@@ -48,7 +44,6 @@ const Layout = ({ children }) => {
     }
     return screenSize
   }
-
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />

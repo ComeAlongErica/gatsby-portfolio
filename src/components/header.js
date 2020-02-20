@@ -10,19 +10,22 @@ const HeaderContainer = styled.header`
   height: 55px;
   background-color: white;
 `
-const Menu = styled.header`
+const Menu = styled.div`
   position: absolute;
-  width: 200px;
+  width: 300px;
   padding: 50px;
   background: white;
   position: absolute;
   right: 0;
   transform-origin: 0% 0%;
-  ${props => !props.isOpen && 'transform: translate(100%, 0);'}
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.12);
+  ${props => !props.isOpen && 'transform: translate(100%, 0);'}
+  ${props =>
+    !props.isMobile &&
+    'transform: translate(0, 0); background: none; height: 55px; padding: 12px; box-shadow: none; a { padding: 15px;}'}
   a {
-    display: block;
+    display: ${props => (props.isMobile ? 'block' : 'inline')};
     text-decoration: none;
     color: ${props => props.theme.darkGrey};
     font-size: 1.25rem;
@@ -77,21 +80,30 @@ const StyledBurger = styled.button`
 `
 const Header = props => {
   const { screen } = props
-  const [menuIsOpen, setMenuIsOpened] = useState(screen === 'mobile')
+  const [menuIsOpen, setMenuIsOpened] = useState(false)
+  const isMobile = screen === 'mobile'
   return (
     <HeaderContainer isOpen={menuIsOpen}>
-      <StyledBurger
-        isOpen={menuIsOpen}
-        onClick={() => setMenuIsOpened(!menuIsOpen)}
-      >
-        <div />
-        <div />
-        <div />
-      </StyledBurger>
-      <Menu isOpen={menuIsOpen}>
-        <a href={'#about'}>About</a>
-        <a href={'#projects'}> Projects</a>
-        <a href={'#contact'}> Contact</a>
+      {isMobile && (
+        <StyledBurger
+          isOpen={menuIsOpen}
+          onClick={() => setMenuIsOpened(!menuIsOpen)}
+        >
+          <div />
+          <div />
+          <div />
+        </StyledBurger>
+      )}
+      <Menu isOpen={menuIsOpen} isMobile={isMobile}>
+        <a href={'#about'} onClick={() => setMenuIsOpened(false)}>
+          About
+        </a>
+        <a href={'#projects'} onClick={() => setMenuIsOpened(false)}>
+          Projects
+        </a>
+        <a href={'#contact'} onClick={() => setMenuIsOpened(false)}>
+          Contact
+        </a>
       </Menu>
     </HeaderContainer>
   )

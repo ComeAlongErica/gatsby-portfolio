@@ -94,6 +94,7 @@ const Development = props => {
     'VSCode',
     'Postman',
   ]
+  const nextUp = ['Typescript', 'Elm', 'Electron', 'Microservices']
   return (
     <Container>
       <h2>My Development Backpack</h2>
@@ -117,6 +118,14 @@ const Development = props => {
         <h3>Tools & Other</h3>
         <p>
           {tools.map((tool, idx) => (
+            <span key={idx}>{tool} </span>
+          ))}
+        </p>
+      </div>
+      <div data-sal='slide-up' data-sal-delay='100' data-sal-easing='ease-in'>
+        <h3>Next Up</h3>
+        <p>
+          {nextUp.map((tool, idx) => (
             <span key={idx}>{tool} </span>
           ))}
         </p>

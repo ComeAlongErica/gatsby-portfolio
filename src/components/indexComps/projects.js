@@ -16,7 +16,7 @@ export const projects = [
     github:
       'https://github.com/ComeAlongErica/planimals-reward-based-todo-list-app',
     description:
-      'A reward based todo app with a digital pet you must keep happy. (AngularJS, Node.js, and Express)',
+      'A reward based todo app with a digital pet you must keep happy. (AngularJS, PostgreSQL, Node.js, and Express)',
   },
   {
     name: 'Double Exposure',
@@ -64,6 +64,7 @@ const ProjectContainer = styled.div`
     margin: 10px;
     height: 185px;
     width: 300px;
+    min-width: 300px;
     overflow: hidden;
     transition: 0.3s ease-in-out;
     :hover {

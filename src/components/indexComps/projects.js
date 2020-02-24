@@ -16,7 +16,8 @@ export const projects = [
     github:
       'https://github.com/ComeAlongErica/planimals-reward-based-todo-list-app',
     description:
-      'A reward based todo app with a digital pet you must keep happy. (AngularJS, PostgreSQL, Node.js, and Express)',
+      'Final project in Grand Circus. A reward based todo app with a digital pet you must keep happy. (AngularJS, PostgreSQL, Node.js, and Express)',
+    date: 'December 2018',
   },
   {
     name: 'Double Exposure',

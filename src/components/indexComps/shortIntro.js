@@ -34,9 +34,9 @@ const ShortIntro = props => {
       <div>
         <p data-sal='slide-up' data-sal-delay='100' data-sal-easing='ease-in'>
           I'm a photographer/graphic designer turned developer. I aim to create
-          elegant and scalable systems that serve users effectively. I enjoy
-          working on both front and back-end portions of an app, but most of my
-          efforts have been focused on the front-end. Truly, I just enjoy a
+          elegant and scalable systems that serve users effectively. While I
+          enjoy working on both front and back-end portions of an app, most of
+          my efforts have been focused on the front-end. Truly, I just enjoy a
           interesting problem to solve.
         </p>
         <p data-sal='slide-up' data-sal-delay='100' data-sal-easing='ease-in'>

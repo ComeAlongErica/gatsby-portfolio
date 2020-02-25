@@ -5,8 +5,8 @@ const Icon = styled.svg`
   margin: 20px;
   cursor: pointer;
   stroke-width: 2;
-  stroke: ${props => props.theme.lightGrey};
-  transition: .3s ease-in-out;
+  stroke: white;
+  transition: 0.3s ease-in-out;
   &:hover {
     stroke: ${props => props.theme.peach};
   }

@@ -7,7 +7,7 @@ import planimal from '../../assets/images/planimal.jpg'
 import recipe from '../../assets/images/recipe.png'
 import lightroom from '../../assets/images/lightroom.jpg'
 
-export const projects = [
+const projects = [
   {
     name: 'Planimal',
     img: planimal,
@@ -32,8 +32,8 @@ export const projects = [
     name: 'Recipe Finder',
     img: recipe,
     alt: 'recipe finder screenshot',
-    url: 'https://comealongerica.github.io/event-scout-event-website/#!/home',
-    github: 'https://github.com/ComeAlongErica/event-scout-event-website',
+    url: 'https://comealongerica.github.io/recipe-finder-guide/',
+    github: 'https://github.com/ComeAlongErica/recipe-finder-guide',
     description:
       'An recipe finder application using Edamam api. (React, Styled Components)',
   },
@@ -43,7 +43,7 @@ const Container = styled.section`
   position: relative;
   width: 100%;
   max-width: 1000px;
-  margin: 0 auto 100px;
+  margin: 0 auto 150px;
   padding-top: 100px;
   h2 {
     text-align: center;

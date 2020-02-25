@@ -61,8 +61,10 @@ const Container = styled.section`
     z-index: 2;
     padding: 10px 20px;
     margin: 0 auto;
-    line-height: 38px;
     max-width: 550px;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 21px;
     color: ${props => props.theme.darkGrey};
     span {
       width: auto;
@@ -102,7 +104,7 @@ const Development = props => {
         <h3>Languages</h3>
         <p>
           {languages.map((language, idx) => (
-            <span key={idx}>{language} </span>
+            <span key={idx}>{language}</span>
           ))}
         </p>
       </div>
@@ -110,7 +112,7 @@ const Development = props => {
         <h3>Libraries & Frameworks</h3>
         <p>
           {frameworks.map((framework, idx) => (
-            <span key={idx}>{framework} </span>
+            <span key={idx}>{framework}</span>
           ))}
         </p>
       </div>
@@ -118,7 +120,7 @@ const Development = props => {
         <h3>Tools & Other</h3>
         <p>
           {tools.map((tool, idx) => (
-            <span key={idx}>{tool} </span>
+            <span key={idx}>{tool}</span>
           ))}
         </p>
       </div>
@@ -126,7 +128,7 @@ const Development = props => {
         <h3>Next Up</h3>
         <p>
           {nextUp.map((tool, idx) => (
-            <span key={idx}>{tool} </span>
+            <span key={idx}>{tool}</span>
           ))}
         </p>
       </div>

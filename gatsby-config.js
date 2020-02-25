@@ -5,9 +5,9 @@
  */
 
 module.exports = {
+  pathPrefix: '/gatsby-portfolio',
   plugins: [
     `gatsby-plugin-styled-components`,
-    { pathPrefix: '/gatsby-portfolio' },
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {

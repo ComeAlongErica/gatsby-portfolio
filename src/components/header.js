@@ -1,16 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
+import comeAlong from '../assets/images/come-along-logo.svg'
+
 const HeaderContainer = styled.header`
-  position: fixed;
+  position: ${props => (props.translate ? 'fixed' : 'absolute')};
+  ${props => props.sticky && `transform: translateY(-60px);`};
+  ${props => props.translate && `transform: translateY(0);`};
+  transition: 0.3s ease-in-out;
   z-index: 10;
   top: 0;
   right: 0;
   width: 100vw;
   height: 60px;
-  background-color: white;
-  box-shadow: 0 10px 20px rgba(201, 202, 202, 0.23),
-    0 6px 6px rgba(213, 219, 225, 0.12);
+  background-color: #f9f7f4;
+  box-shadow: rgba(36, 50, 66, 0.1) 0px 1px 2px 0px;
+  .header-size {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 `
 const Menu = styled.div`
   position: absolute;
@@ -82,48 +91,54 @@ const StyledBurger = styled.button`
   }
 `
 const Logo = styled.img`
-  height: 46px;
-  margin: 6px 10px;
+  height: 35px;
+  margin: 13px 10px;
 `
 const Header = props => {
-  const { screen } = props
+  const { screen, sticky } = props
   const [menuIsOpen, setMenuIsOpened] = useState(false)
+  const [translate, setTranslate] = useState(false)
   const isMobile = !(screen === 'tablet' || screen === 'desktop')
-  console.log(isMobile)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setTranslate(sticky)
+    }, 300)
+  }, [sticky])
+
   return (
-    <HeaderContainer isOpen={menuIsOpen}>
-      <a
-        href='/#'
-        aria-label='scroll to top'
-        onClick={() => setMenuIsOpened(false)}
-      >
-        <Logo
-          src='https://comealongerica.com/images/come-along-logo.svg'
-          alt='come along logo'
-        />
-      </a>
-      {isMobile && (
-        <StyledBurger
-          isOpen={menuIsOpen}
-          onClick={() => setMenuIsOpened(!menuIsOpen)}
+    <HeaderContainer sticky={sticky} translate={translate}>
+      <div className={'header-size'}>
+        <a
+          href='/#'
+          aria-label='scroll to top'
+          onClick={() => setMenuIsOpened(false)}
         >
-          <div />
-          <div />
-          <div />
-        </StyledBurger>
-      )}
-      <Menu isOpen={menuIsOpen} isMobile={isMobile}>
-        <a href={'#about'} onClick={() => setMenuIsOpened(false)}>
-          About
+          <Logo src={comeAlong} alt='come along logo' />
         </a>
-        <a href={'#projects'} onClick={() => setMenuIsOpened(false)}>
-          Projects
-        </a>
-        <a href={'#contact'} onClick={() => setMenuIsOpened(false)}>
-          Contact
-        </a>
-      </Menu>
+        {isMobile && (
+          <StyledBurger
+            isOpen={menuIsOpen}
+            onClick={() => setMenuIsOpened(!menuIsOpen)}
+          >
+            <div />
+            <div />
+            <div />
+          </StyledBurger>
+        )}
+        <Menu isOpen={menuIsOpen} isMobile={isMobile}>
+          <a href={'#about'} onClick={() => setMenuIsOpened(false)}>
+            About
+          </a>
+          <a href={'#projects'} onClick={() => setMenuIsOpened(false)}>
+            Projects
+          </a>
+          <a href={'#contact'} onClick={() => setMenuIsOpened(false)}>
+            Contact
+          </a>
+        </Menu>
+      </div>
     </HeaderContainer>
   )
 }
-export default Header
+export default React.memo(Header)

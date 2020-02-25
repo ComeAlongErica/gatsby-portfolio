@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
 
 const Layout = ({ children }) => {
   const [screenSize, setScreenSize] = useState()
+  const [scrollPosition, setScrollPosition] = useState()
 
   useEffect(() => {
     const updateScreenSize = () => {
@@ -32,6 +33,15 @@ const Layout = ({ children }) => {
     window.addEventListener('resize', updateScreenSize)
     return () => {
       window.removeEventListener('resize', updateScreenSize)
+    }
+  }, [])
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 
@@ -47,7 +57,7 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header screen={screenSize} />
+      <Header screen={screenSize} sticky={scrollPosition > 293} />
       {children}
       <Footer />
     </ThemeProvider>

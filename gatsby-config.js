@@ -7,6 +7,7 @@
 module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
+    { pathPrefix: '/gatsby-portfolio' },
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {

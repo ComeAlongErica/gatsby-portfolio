@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ThemeProvider, createGlobalStyle } from 'styled-components'
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { theme } from '../assets/ThemeProvider'
 import Header from './header'
 import Footer from './footer'
@@ -8,9 +8,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: overpass, Trebuchet MS, sans-serif;
     margin: 0;
-    max-width: 100vw;
-    min-height: 100vh;
-    overflow-x: hidden;
   }
   html {
     scroll-behavior: smooth;
@@ -18,7 +15,12 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     }
+`
 
+const BodyContainer = styled.div`
+  overflow-x: hidden;
+  max-width: 100vw;
+  min-height: 100vh;
 `
 
 const Layout = ({ children }) => {
@@ -57,9 +59,11 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header screen={screenSize} sticky={scrollPosition > 293} />
-      {children}
-      <Footer />
+      <BodyContainer>
+        <Header screen={screenSize} sticky={scrollPosition > 293} />
+        {children}
+        <Footer />
+      </BodyContainer>
     </ThemeProvider>
   )
 }

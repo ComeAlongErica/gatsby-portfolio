@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import comeAlong from '../assets/images/come-along-logo.svg'
 
 const HeaderContainer = styled.header`
-  position: ${props => (props.translate ? 'fixed' : 'absolute')};
+  position: ${props => (props.translate ? 'fixed' : 'relative')};
   ${props => props.sticky && `transform: translateY(-60px);`};
   ${props => props.translate && `transform: translateY(0);`};
   transition: 0.3s ease-in-out;

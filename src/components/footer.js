@@ -22,7 +22,7 @@ const HeaderText = styled.h2`
 `
 
 const Footer = () => (
-  <FooterContainer>
+  <FooterContainer id={'contact'}>
     <HeaderText>Let's Connect!</HeaderText>
     <a href={'https://github.com/ComeAlongErica'} aria-label={'view github'}>
       <Github />

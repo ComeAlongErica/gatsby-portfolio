@@ -3,15 +3,17 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 const Icon = styled.svg`
-  fill: ${props => props.theme[props.color]};
-  max-width: 500px;
-  stroke: ${props => props.theme[props.color]};
+  fill: ${props => props.theme[props.color] + '8f'};
+  max-width: 300px;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 10;
   height: ${props => props.height}px;
   ${props => props.styles}
+  @media screen and (min-width: ${props => props.theme.tablet}px) {
+    max-width: 500px;
+  }
 `
 
 const GroupX = props => {

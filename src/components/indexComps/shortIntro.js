@@ -18,12 +18,13 @@ const Container = styled.section`
   p {
     position: relative;
     z-index: 1;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 300;
     padding: 10px 20px;
     margin: 0 auto;
-    line-height: 25px;
     max-width: 550px;
     color: ${props => props.theme.darkGrey};
-    background-color: #ffffff69;
   }
 `
 
@@ -33,11 +34,11 @@ const ShortIntro = props => {
       <h2>Short Introduction</h2>
       <div>
         <p data-sal='slide-up' data-sal-delay='100' data-sal-easing='ease-in'>
-          I'm a photographer/graphic designer turned developer. I aim to create
-          elegant and scalable systems that serve users effectively. While I
-          enjoy working on both front and back-end portions of an app, most of
-          my efforts have been focused on the front-end. Truly, I just enjoy a
-          interesting problem to solve.
+          I'm a software developer with a passion for learning and spinning up
+          creative solutions. I aim to create elegant and scalable systems that
+          serve users effectively. While I enjoy working on both front and
+          back-end portions of an app, most of my efforts have been focused on
+          the front-end. I truly enjoy a interesting problem to solve.
         </p>
         <p data-sal='slide-up' data-sal-delay='100' data-sal-easing='ease-in'>
           In addition to development work, I also do photography and graphic
@@ -52,7 +53,7 @@ const ShortIntro = props => {
       <GroupX
         color={'blue'}
         height={250}
-        styles={`position: absolute; bottom: -140px; left: -150px; transform: rotate(10deg); opacity: .90;`}
+        styles={`position: absolute; bottom: -180px; left: -160px; transform: rotate(10deg); opacity: .90;`}
       />
     </Container>
   )

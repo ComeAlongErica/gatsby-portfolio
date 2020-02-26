@@ -37,7 +37,8 @@ const TextContainer = styled.div`
   margin: 50px auto;
   h1 {
     font-size: 50px;
-    margin: 40px 0 0;
+    margin: 10px 0;
+    line-height: 55px;
     color: ${props => props.theme.darkGrey};
     span {
       cursor: default;

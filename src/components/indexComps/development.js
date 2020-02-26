@@ -41,6 +41,8 @@ const Container = styled.section`
     -webkit-backface-visibility: hidden;
   }
   h2 {
+    position: relative;
+    z-index: 2;
     margin-top: -20px;
     text-align: center;
     font-size: 30px;

@@ -83,7 +83,8 @@ const ProjectContainer = styled.div`
   p {
     position: relative;
     z-index: 1;
-    line-height: 25px;
+    font-size: 18px;
+    line-height: 30px;
     max-width: 550px;
     font-size: 18px;
     font-weight: 300;

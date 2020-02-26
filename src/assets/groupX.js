@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 const Icon = styled.svg`
-  fill: ${props => props.theme[props.color] + '8f'};
+  fill: ${props => props.theme[props.color]};
+  stroke: ${props => props.theme[props.color]};
   max-width: 300px;
   stroke-width: 2;
   stroke-linecap: round;

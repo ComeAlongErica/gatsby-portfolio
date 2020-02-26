@@ -118,6 +118,7 @@ const Header = props => {
         </a>
         {isMobile && (
           <StyledBurger
+            aria-label='open menu'
             isOpen={menuIsOpen}
             onClick={() => setMenuIsOpened(!menuIsOpen)}
           >

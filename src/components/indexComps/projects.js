@@ -149,7 +149,6 @@ const Projects = props => {
           data-sal-easing='ease-in'
         >
           <a
-            target='_blank'
             href={project.url}
             aria-label={'view project'}
             className={'img-click'}
@@ -160,7 +159,6 @@ const Projects = props => {
             <h3>{project.name}</h3>
             <p>{project.description}</p>
             <a
-              target='_blank'
               href={project.github}
               aria-label={'view source code'}
               className={'link'}

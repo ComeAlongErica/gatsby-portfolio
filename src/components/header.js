@@ -1,11 +1,24 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes} from 'styled-components'
 
 import comeAlong from '../assets/images/come-along-logo.svg'
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
+
 const HeaderContainer = styled.header`
   position: ${props => (props.sticky !== undefined ? 'fixed' : 'relative')};
-  ${props => props.sticky === undefined || props.sticky ? `transform: translateY(0);` : `transform: translateY(-60px);`};
+  ${props =>
+    props.sticky === undefined || props.sticky
+      ? `transform: translateY(0);`
+      : `transform: translateY(-60px);`};
   transition: 0.3s ease-in-out;
   z-index: 10;
   top: 0;
@@ -31,6 +44,7 @@ const Menu = styled.div`
   transform-origin: 0% 0%;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.12);
+  animation: ${fadeIn} 1s linear;
   ${props => !props.isOpen && 'transform: translate(100%, 0);'}
   ${props =>
     !props.isMobile &&
@@ -61,7 +75,6 @@ const StyledBurger = styled.button`
   cursor: pointer;
   padding: 0;
   z-index: 10;
-
   div {
     width: 2rem;
     height: 0.25rem;
@@ -81,6 +94,11 @@ const StyledBurger = styled.button`
 
     :nth-child(3) {
       ${props => props.isOpen && 'transform: rotate(-45deg);'}
+    }
+  }
+  :active {
+    div {
+      transform: scaleY(1.4);
     }
   }
   :hover {
@@ -108,7 +126,7 @@ const Header = props => {
         >
           <Logo src={comeAlong} alt='come along logo' />
         </a>
-        {isMobile && (
+        {screen && isMobile && (
           <StyledBurger
             aria-label='open menu'
             isOpen={menuIsOpen}
@@ -119,17 +137,19 @@ const Header = props => {
             <div />
           </StyledBurger>
         )}
-        <Menu isOpen={menuIsOpen} isMobile={isMobile}>
-          <a href={'#about'} onClick={() => setMenuIsOpened(false)}>
-            About
-          </a>
-          <a href={'#projects'} onClick={() => setMenuIsOpened(false)}>
-            Projects
-          </a>
-          <a href={'#contact'} onClick={() => setMenuIsOpened(false)}>
-            Contact
-          </a>
-        </Menu>
+        {screen && (
+          <Menu isOpen={menuIsOpen} isMobile={isMobile}>
+            <a href={'#about'} onClick={() => setMenuIsOpened(false)}>
+              About
+            </a>
+            <a href={'#projects'} onClick={() => setMenuIsOpened(false)}>
+              Projects
+            </a>
+            <a href={'#contact'} onClick={() => setMenuIsOpened(false)}>
+              Contact
+            </a>
+          </Menu>
+        )}
       </div>
     </HeaderContainer>
   )

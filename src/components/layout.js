@@ -60,6 +60,7 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <BodyContainer>
+        <Header screen={screenSize} />
         <Header screen={screenSize} sticky={scrollPosition > 293} />
         {children}
         <Footer />

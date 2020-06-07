@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import comeAlong from '../assets/images/come-along-logo.svg'
 
 const HeaderContainer = styled.header`
-  position: ${props => (props.translate ? 'fixed' : 'relative')};
-  ${props => props.sticky && `transform: translateY(-60px);`};
-  ${props => props.translate && `transform: translateY(0);`};
+  position: ${props => (props.sticky !== undefined ? 'fixed' : 'relative')};
+  ${props => props.sticky === undefined || props.sticky ? `transform: translateY(0);` : `transform: translateY(-60px);`};
   transition: 0.3s ease-in-out;
   z-index: 10;
   top: 0;
@@ -97,17 +96,10 @@ const Logo = styled.img`
 const Header = props => {
   const { screen, sticky } = props
   const [menuIsOpen, setMenuIsOpened] = useState(false)
-  const [translate, setTranslate] = useState(false)
   const isMobile = !(screen === 'tablet' || screen === 'desktop')
 
-  useEffect(() => {
-    setTimeout(() => {
-      setTranslate(sticky)
-    }, 300)
-  }, [sticky])
-
   return (
-    <HeaderContainer sticky={sticky} translate={translate}>
+    <HeaderContainer sticky={sticky}>
       <div className={'header-size'}>
         <a
           href='/#'

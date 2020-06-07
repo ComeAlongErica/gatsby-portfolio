@@ -7,38 +7,35 @@ const Container = styled.section`
   margin: 250px 0 0;
   width: 100vw;
   min-height: 350px;
-  background-color: ${props => props.theme.peach};
+  /* background-color: ${props => props.theme.peach}; */
   padding: 50px;
   position: relative;
   @media screen and (min-width: ${props => props.theme.tablet}px) {
     min-height: 400px;
   }
   ::before {
-    transform: skewY(-2deg);
-    transform-origin: 100% 0;
-    position: absolute;
     background: inherit;
+    background-color: ${props => props.theme.peach};
     content: '';
     position: absolute;
     left: 0;
-    top: -80px;
-    height: 80px;
+    top: -50px;
     width: 100%;
-    -webkit-backface-visibility: hidden;
+    height: 75%;
+    transform: skew(0deg, -2deg);
+    z-index: -100;
   }
   ::after {
-    transform: skewY(2deg);
-    transform-origin: 0 100%;
-    position: absolute;
     background: inherit;
+    background-color: ${props => props.theme.peach};
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -25px;
     left: 0;
-    bottom: 0px;
-    height: 80px;
     width: 100%;
-    -webkit-backface-visibility: hidden;
+    height: 75%;
+    transform: skew(0deg, 2deg);
+    z-index: -100;
   }
   h2 {
     position: relative;

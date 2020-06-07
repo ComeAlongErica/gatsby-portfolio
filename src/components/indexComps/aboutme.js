@@ -14,18 +14,15 @@ const Container = styled.section`
     min-height: 500px;
   }
   ::after {
-    transform: skewY(2deg);
-    transform-origin: 100% 0;
-    position: absolute;
     background: inherit;
     content: '';
     position: absolute;
-    bottom: 0;
     left: 0;
-    bottom: -80px;
-    height: 80px;
+    top: 0;
     width: 100%;
-    -webkit-backface-visibility: hidden;
+    height: calc(100% + 75px);
+    transform: skew(0deg, 2deg);
+    z-index: -100;
   }
 `
 

@@ -79,7 +79,7 @@ const Container = styled.section`
 `
 
 const Development = props => {
-  const languages = ['Javascript', 'Python', 'HTML5', 'CSS3']
+  const languages = ['Javascript', 'Python', 'HTML5', 'CSS3', 'Typescript']
   const frameworks = [
     'React',
     'MobX',
@@ -88,6 +88,7 @@ const Development = props => {
     'Express',
     'GraphQL',
     'AngularJS',
+    'NodeJS'
   ]
   const tools = [
     'Git',
@@ -98,7 +99,7 @@ const Development = props => {
     'VSCode',
     'Postman',
   ]
-  const nextUp = ['Typescript', 'Elm', 'Electron', 'Microservices']
+  const nextUp = ['Storybook', 'Electron', 'Flask']
   return (
     <Container>
       <h2>My Development Backpack</h2>

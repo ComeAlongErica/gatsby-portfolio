@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
+import { Helmet } from 'react-helmet'
 import { theme } from '../assets/ThemeProvider'
 import Header from './header'
 import Footer from './footer'
@@ -58,6 +59,16 @@ const Layout = ({ children }) => {
   }
   return (
     <ThemeProvider theme={theme}>
+      <Helmet>
+        <title>Come Along Erica</title>
+        <link rel='canonical' href='https://comealongerica.com/' />
+        <meta
+          name='description'
+          content="Hello, I'm Erica. I'm a curious and experimental software developer."
+        />
+        <meta name="keywords" content="HTML, CSS, JavaScript, React, Detroit" />
+        <meta name="author" content="Erica Rae Perry" />
+      </Helmet>
       <GlobalStyle />
       <BodyContainer>
         <Header screen={screenSize} />
